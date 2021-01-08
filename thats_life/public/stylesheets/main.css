@@ -11,6 +11,15 @@
     width: 100%;
   }
 
+  form { 
+    width: 50%;
+    margin: 0 auto; 
+  }
+
+  form textarea, form input { 
+    width: 100%; 
+  }
+
   /* --- Welcome Page Styles --- */
   body {
     background-color: lightblue;
@@ -111,5 +120,12 @@
   h2 {
     font-size: 18px;
     line-height: 24px;
+  }
+
+  /* --- Post Page Styles --- */
+
+  .txtbox {
+    height: 1000px;
+    width: 2100px;
   }
 }
