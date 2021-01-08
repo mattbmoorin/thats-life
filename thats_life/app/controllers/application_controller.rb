@@ -14,13 +14,13 @@ class ApplicationController < Sinatra::Base
   #   erb :welcome
   # end
 
-  def logged_in_check
-    if logged_in?
-      redirect to '/posts' 
-    else
-      erb :'user/signup'
-    end
-  end
+  # def logged_in_check
+  #   if logged_in?
+  #     redirect to '/posts' 
+  #   else
+  #     erb :'user/signup'
+  #   end
+  # end
   
   helpers do
     def logged_in?

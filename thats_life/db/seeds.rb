@@ -5,7 +5,7 @@ require "pry"
     posts = Post.create(
         body: Faker::Quote.matz,
         post_time: Time.now,
-        user_id: rand(1..99)
+        user_id: "Anonymous"
     )
     #binding.pry
    #posts.save

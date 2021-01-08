@@ -1,5 +1,7 @@
 <h1>Latest posts:</h1>
-<% @post.each do |p| %>
-    <%= p.id %><br>
+<% @posts.each do |p| %>
+    <%= p.user_id %>&nbsp<%= p.post_time %><br>
+    <a href="/posts/<%= p.id %>"><%= p.id %></a><br>
     <%= p.body %><br><br>
+    
 <% end %>
