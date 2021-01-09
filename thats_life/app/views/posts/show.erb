@@ -1,9 +1,12 @@
 <h2>Show page</h2>
 <%= @post.user_id %><br><br>
 <%= @post.body %><br>
+
+<% if @post.user_id == session[:user_id] %>
 <a href="/posts/<%= @post.id %>/edit">edit</a>
 
 <form method="POST" action="/posts/<%= @post.id %>">
    <input type="hidden" name="_method" value="DELETE">
    <input type="submit" value="delete">
 </form>
+<% end %>
