@@ -10,6 +10,10 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "0xDe783jfu9eDSilr90e235REit6"
   end
 
+  get '/' do
+    erb :'/welcome'
+  end
+
   not_found do
     redirect "/posts"
   end
