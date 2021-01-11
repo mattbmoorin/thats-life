@@ -56,6 +56,10 @@ class PostController < ApplicationController
         def current_post
             Post.find(params["id"])
         end 
+
+        def random_post
+            Post.find(rand(0..100))
+        end
     end
 
     private

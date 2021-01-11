@@ -2,7 +2,7 @@
   <br>
     <h2>Latest posts:</h2>
 <br>
-<% @posts.each do |p| %>
+<% random_post = @posts.sample %>
   <div class="container"> <%= p.author_name %><br>
    &nbsp
     <%= p.post_time %>
@@ -12,11 +12,11 @@
             <div class="span6"> 
              <a href="/posts/<%= p.id %>">View Post</a>
               <br>
-               <%= p.body %>
+               <%= random_post.body %>
               </div>
             </div>
           </div>
           </div>
         <br>
-      <br>   
-<% end %>
+      <br>  
+

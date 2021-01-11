@@ -6,11 +6,11 @@ class UserController < ApplicationController
     post '/signup' do
         user = User.new(params)
             if user.save
-                flash[:notice] = "You have succesfully signed up!"
+                #flash[:notice] = "You have succesfully signed up!"
                 session[:user_id] = user.id
                 redirect '/posts'
             else
-                flash.now[:error] = "Something went wrong, please try again"
+                #flash.now[:error] = "Something went wrong, please try again"
                 redirect '/signup'
             end
     end
