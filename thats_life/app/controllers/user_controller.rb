@@ -32,6 +32,6 @@ class UserController < ApplicationController
     #change to session.delete(PARAMS) when adding cookie functionality
     get '/logout' do
         session.clear
-        redirect '/posts'
+        redirect '/'
     end
 end

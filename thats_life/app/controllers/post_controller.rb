@@ -1,6 +1,7 @@
 class PostController < ApplicationController
     get '/posts' do 
-        @posts = Post.all #grabbed from model
+        logged_in_user_check
+        @random_post = Post.find(rand(0..100))
         erb :"posts/index"
     end
 
@@ -52,17 +53,22 @@ class PostController < ApplicationController
         redirect '/posts'
     end
 
+    get '/random' do
+        @random_post = Post.find(rand(0..100))
+        redirect '/posts'
+    end
+
     helpers do
         def current_post
             Post.find(params["id"])
         end 
-
-        def random_post
-            Post.find(rand(0..100))
-        end
     end
 
     private
+
+    def random_post
+        Post.find(rand(0..100))
+    end
 
     def post_belongs_to_user?
         unless @post.user_id == session[:user_id]
