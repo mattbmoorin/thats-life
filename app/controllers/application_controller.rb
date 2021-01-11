@@ -9,7 +9,7 @@ class ApplicationController < Sinatra::Base
     register Sinatra::Flash
     set :session_secret, "0xDe783jfu9eDSilr90e235REit6"
   end
-  
+
   helpers do
     def logged_in?
       !!session[:user_id]
