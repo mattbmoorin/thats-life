@@ -1,9 +1,17 @@
-<h2>Show page</h2>
-<%= @post.user_id %><br><br>
-<%= @post.body %><br>
-
-<% if @post.user_id == session[:user_id] %>
-<a href="/posts/<%= @post.id %>/edit">edit</a>
+<br>
+   <br>
+      <h3>
+         <%= @post.author_name %> says...</h3>
+            <br>
+               <br>
+                  <%= @post.body %>
+               <br>
+            <br>
+         <br>
+      <% if @post.user_id == session[:user_id] %>
+<form method="get" action="/posts/<%= @post.id %>/edit">
+   <input type="submit" value="edit">
+</form>
 
 <form method="POST" action="/posts/<%= @post.id %>">
    <input type="hidden" name="_method" value="DELETE">

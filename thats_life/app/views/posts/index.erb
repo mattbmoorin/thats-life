@@ -1,15 +1,22 @@
-<% if logged_in? %>
-<h3>Welcome, <%= current_username %></h3>
-<a href='/logout'>log out</a>
-<% end %>
-    <h1>Latest posts:</h1>
+<br>
+  <br>
+    <h2>Latest posts:</h2>
 <br>
 <% @posts.each do |p| %>
-    <%= p.user_id %>&nbsp<%= p.post_time %>
+  <div class="container"> <%= p.author_name %><br>
+   &nbsp
+    <%= p.post_time %>
         <br>
-            <a href="/posts/<%= p.id %>"><%= p.id %></a>
-                <br>
-            <%= p.body %>
+        <div class="container-fluid">
+           <div class="row">
+            <div class="span6"> 
+             <a href="/posts/<%= p.id %>">View Post</a>
+              <br>
+               <%= p.body %>
+              </div>
+            </div>
+          </div>
+          </div>
         <br>
-    <br>   
+      <br>   
 <% end %>

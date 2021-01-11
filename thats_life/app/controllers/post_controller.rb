@@ -22,6 +22,7 @@ class PostController < ApplicationController
         logged_in_user_check
         post = Post.create({
             body: params["body"], 
+            author_name: current_username,
             user_id: session[:user_id], 
             post_time: Time.now
             })
@@ -40,7 +41,6 @@ class PostController < ApplicationController
         @post = current_post
         logged_in_user_check
         post_belongs_to_user?
-        #binding.pry
         @post.update(params["post"])
         redirect "/posts/#{@post.id}"
     end
