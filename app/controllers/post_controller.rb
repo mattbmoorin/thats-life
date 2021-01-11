@@ -1,5 +1,6 @@
 class PostController < ApplicationController
     get '/posts' do 
+        logged_in_user_check
         @random_post = Post.find(rand(0..100))
         erb :"posts/index"
     end
