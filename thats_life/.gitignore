@@ -42,5 +42,5 @@
 .rvmrc
 
 # End of https://www.toptal.com/developers/gitignore/api/ruby
-development.sqlite
+
 notes.md
