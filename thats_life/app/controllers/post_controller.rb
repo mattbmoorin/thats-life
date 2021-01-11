@@ -1,7 +1,7 @@
 class PostController < ApplicationController
     get '/posts' do 
         logged_in_user_check
-        @random_post = Post.find(rand(0..100))
+        @random_post = random_post
         erb :"posts/index"
     end
 
@@ -54,7 +54,7 @@ class PostController < ApplicationController
     end
 
     get '/random' do
-        @random_post = Post.find(rand(0..100))
+        @random_post = Post.find(Post.all.sample.id)
         redirect '/posts'
     end
 
@@ -67,7 +67,7 @@ class PostController < ApplicationController
     private
 
     def random_post
-        Post.find(rand(0..100))
+        Post.find(Post.all.sample.id)
     end
 
     def post_belongs_to_user?
