@@ -1,0 +1,22 @@
+<br>
+  <br>
+    <h2>Latest posts:</h2>
+<br>
+<% random_post = @posts.sample %>
+  <div class="container"> <%= p.author_name %><br>
+   &nbsp
+    <%= p.post_time %>
+        <br>
+        <div class="container-fluid">
+           <div class="row">
+            <div class="span6"> 
+             <a href="/posts/<%= p.id %>">View Post</a>
+              <br>
+               <%= random_post.body %>
+              </div>
+            </div>
+          </div>
+          </div>
+        <br>
+      <br>  
+
