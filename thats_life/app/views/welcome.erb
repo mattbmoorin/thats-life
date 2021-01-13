@@ -1,5 +1,9 @@
 <div class="container-fluid">
-  <br><br>
-  <h1>That's Life</h1>
-    <h2>Sign up or log in and pull a random thought out of the binary abyss...</h2>
-    </div>
+   <br><br>
+   <% if logged_in? %>
+   <h1>Welcome back, <%= User.find(session[:user_id]).username %>.</h1>
+   <% else %>
+   <h1>That's Life...</h1>
+   <h2>Sign up or log in and pull a random thought out of the binary abyss...</h2>
+   <% end %>  
+</div>

@@ -13,6 +13,7 @@ class PostController < ApplicationController
 
     get '/posts/:id' do
         @post = current_post
+        missing_post
         erb :"posts/show"
     end
 
@@ -29,9 +30,10 @@ class PostController < ApplicationController
         redirect '/posts'
     end
 
-    #renders view form to update 1 particular post
+    #renders view form to update a post
     get '/posts/:id/edit' do
         @post = current_post
+        missing_post
         logged_in_user_check
         post_belongs_to_user?
          erb :"posts/edit"
@@ -54,17 +56,25 @@ class PostController < ApplicationController
     end
 
     get '/random' do
-        @random_post = Post.find(Post.all.sample.id)
+        @random_post = random_post
         redirect '/posts'
     end
 
     helpers do
-        def current_post
-            Post.find(params["id"])
-        end 
+        
     end
 
     private
+
+    def current_post
+        Post.find_by_id(params["id"])
+    end 
+
+    def missing_post
+        unless current_post != nil
+            redirect '/posts'
+        end
+    end
 
     def random_post
         Post.find(Post.all.sample.id)

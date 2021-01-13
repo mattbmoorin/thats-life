@@ -1,22 +1,21 @@
 <br>
-  <br>
-    <h2>A random post is like a washed up manuscript on an abandoned digital beach:</h2>
 <br>
-<% #random_post = @posts.sample %>
-  <div class="container"> <%= @random_post.author_name %><br>
+<h5>A random post is like a washed up manuscript on an abandoned digital beach:</h5>
+<br>
+<div class="container">
+   <%= @random_post.author_name %><br>
    &nbsp
-    <%= @random_post.post_time %>
-        <br>
-        <div class="container-fluid">
-           <div class="row">
-            <div class="span6"> 
-             <a href="/posts/<%= @random_post.id %>">View Post</a>
-              <br>
-               <%= @random_post.body %>
-              </div>
-            </div>
-          </div>
-          </div>
-        <br>
-      <br>  
-
+   <%= @random_post.post_time %>
+   <br>
+   <div class="container-fluid">
+      <div class="row">
+         <div class="span6"> 
+            <a href="/posts/<%= @random_post.id %>">View Post</a>
+            <br>
+            <%= @random_post.body %>
+         </div>
+      </div>
+   </div>
+</div>
+<br>
+<br>
