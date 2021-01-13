@@ -37,7 +37,7 @@ class PostController < ApplicationController
         post_belongs_to_user?
         erb :"posts/edit"
     end
-
+    
     #creates action for above view
     put '/posts/:id' do
         @post = current_post
@@ -58,10 +58,6 @@ class PostController < ApplicationController
     get '/random' do
         @random_post = random_post
         redirect '/posts'
-    end
-
-    helpers do
-        
     end
 
     private
