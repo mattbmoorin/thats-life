@@ -24,7 +24,7 @@ class PostController < ApplicationController
             body: params["body"], 
             author_name: current_username,
             user_id: session[:user_id], 
-            post_time: Time.now
+            post_time: Time.now.ctime
             })
         redirect '/posts'
     end
@@ -35,8 +35,9 @@ class PostController < ApplicationController
         missing_post
         logged_in_user_check
         post_belongs_to_user?
-         erb :"posts/edit"
+        erb :"posts/edit"
     end
+
     #creates action for above view
     put '/posts/:id' do
         @post = current_post
