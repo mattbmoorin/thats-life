@@ -19,7 +19,6 @@ class PostController < ApplicationController
 
     # creates action for above view
     post '/posts' do
-        #post = Post.create(params)
         logged_in_user_check
         post = Post.create({
             body: params["body"], 
