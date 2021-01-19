@@ -11,7 +11,3 @@
 > Select That's Life to see a random post.
 
 > You may edit your post if it happens to appear for you.
-
-<h3>todo</h3>
-
-<b> Change edit view to Post route so the post id does not display in the URL.
