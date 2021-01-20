@@ -23,7 +23,7 @@ class PostController < ApplicationController
         post = Post.create({
             body: params["body"], 
             author_name: current_username,
-            user_id: session[:user_id], 
+            user_id: current_user_id, 
             post_time: Time.now.ctime
             })
         redirect '/posts'
@@ -77,7 +77,7 @@ class PostController < ApplicationController
     end
 
     def post_belongs_to_user?
-        unless @post.user_id == session[:user_id]
+        unless @post.user_id == current_user_id
           redirect '/login'
         end
     end
